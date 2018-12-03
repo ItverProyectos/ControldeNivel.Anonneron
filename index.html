@@ -1,0 +1,691 @@
+<style type="text/css">
+/*-------------------------------------------Estilos----------------------------------------------*/
+ html { 
+  background: url(pictures/35.jpg) no-repeat fixed center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ .a200x160px{
+  width: 400px;
+  height: 320px;
+ } 
+ /*------------------------------------------Boton Test------------------------------------*/
+.switch3 {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 68px;
+}
+
+.switch3 input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider.round3 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider.round3:before {
+  position: absolute;
+  content: "";
+  height: 52px;
+  width: 52px;
+  left: 8px;
+  bottom: 8px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider.round3 {
+  background-color: brown;
+}
+
+input:focus + .slider.round3 {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider.round3:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+/* Rounded sliders */
+.slider.round3 {
+  border-radius: 68px;
+}
+
+.slider.round3:before {
+  border-radius: 50%;
+}
+/*-------------------------------------------Boton Automatico-------------------------------------*/
+ .switch1 {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 68px;
+}
+
+.switch1 input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 52px;
+  width: 52px;
+  left: 8px;
+  bottom: 8px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 68px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*------------------------------------------Boton Manual-----------------------------------*/
+.switch2 {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 68px;
+}
+
+.switch2 input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider.round2 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider.round2:before {
+  position: absolute;
+  content: "";
+  height: 52px;
+  width: 52px;
+  left: 8px;
+  bottom: 8px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider.round2 {
+  background-color: green;
+}
+
+input:focus + .slider.round2 {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider.round2:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+/* Rounded sliders */
+.slider.round2 {
+  border-radius: 68px;
+}
+
+.slider.round2:before {
+  border-radius: 50%;
+}
+/*----------------------------------------Slider Manual-------------------------------------------*/
+input[type=range] {
+  height: 7px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 200px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: green;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid green;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #C5F7B2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: green;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: green;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #2497E3;
+}
+/*------------------------------------------Textos----------------------------------------*/
+#estado{
+color:black;
+font-family: Bernard MT Condensed;
+}
+#txtcheck{
+font-size:200%; 
+color:brown;
+font-family: Stencil;
+}
+#txtauto{
+color:blue;
+font-family: Stencil;
+}
+#txtmanu{
+color:green;
+font-family: Stencil;
+}
+#porcentaje{
+color:#0B610B;	
+}
+#topicos{
+font-size:210%; 
+color:brown;
+font-family: Stencil;
+}
+#integrantes{
+font-size:180%; 
+color:#61380B;
+font-family: Stencil;
+}
+#alum1{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#alum2{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#alum3{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#alum4{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#alum4{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#alum5{
+font-size:110%; 
+color:black;
+font-family: Stencil;
+}
+#alum5{
+font-size:110%; 
+color:#0B0719;
+font-family: Stencil;
+}
+#mat1{
+font-size:110%; 
+color:#19070B;
+font-family: Stencil;
+}
+#mat2{
+font-size:110%; 
+color:#19070B;
+font-family: Stencil;
+}
+#mat3{
+font-size:110%; 
+color:#19070B;
+font-family: Stencil;
+}
+#mat4{
+font-size:110%; 
+color:#19070B;
+font-family: Stencil;
+}
+#mat5{
+font-size:110%; 
+color:#19070B;
+font-family: Stencil;
+}
+</style>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Llenado Automatico Control Wifi</title>
+  <script src='mqttws31.js' type='text/javascript'></script>
+  <script src="raphael-2.1.4.min.js"></script>
+  <script src="justgage.js"></script> 
+  <script src="jquery.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  <link rel="icon" type="image/png" href="pictures/itver.png" /> 
+</head>
+
+<body>
+    <center><a href="Index Es.html"><img src="pictures/titu.png" alt=""></a>
+    <div id ="txtcheck">ACTIVAR</div> 
+    <label class="switch3">
+	<input type="checkbox" id="botontest" onclick='OnOff3()'>
+	<span class="slider round3"></span>
+	</label></center>
+<center><table>
+<tr>
+  <td><center>
+<div id ="ledauto">
+<svg width="200" height="150"viewBox="0 0 640 480">
+ <defs>
+  <linearGradient id="svg_6" x1="0" y1="0" x2="1" y2="0">
+   <stop stop-color="#bfbfbf" offset="0"/>
+   <stop stop-color="#404040" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_11" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop id="led1" stop-color="#000000" stop-opacity="0.992188" offset="0"/>
+   <stop stop-color="#010182" stop-opacity="0.988281" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_14" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+   <stop stop-color="#0606d3" stop-opacity="0.984375" offset="0.703125"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_3" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
+  <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_7"/>
+  <circle fill="url(#svg_11)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_8"/>
+  <ellipse fill="url(#svg_14)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_20" transform="rotate(-47.7626, 250.18, 170.125)"/>
+ </g>
+</svg>
+</div>
+<div><h1><a id ="txtauto">AUTOMATICO</a></h1></div> 
+<label class="switch1">
+<input type="checkbox" id="botonauto"onclick='OnOff1()'>
+<span class="slider round"></span>
+</label> 
+  </center></td>
+
+  <td><center>
+
+      <div id="gauge" class="a200x160px"></div>
+      <div><img id="imgEstado" src="pictures/tanke.png"></div>
+      <div><h2><a id ="estado">VACIO</a></h2></div> 
+
+    
+  </center></td>
+  <td><center>
+<div id="ledmanu">
+<svg width="200" height="150"viewBox="0 0 640 480">
+ <defs>
+  <linearGradient id="svg_26" x1="0" y1="0" x2="1" y2="0">
+   <stop stop-color="#bfbfbf" offset="0"/>
+   <stop stop-color="#404040" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_211" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop id="led2" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
+   <stop stop-color="#018201" stop-opacity="0.988281" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_214" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+   <stop stop-color="#06d306" stop-opacity="0.984375" offset="0.703125"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_23" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
+  <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_27"/>
+  <circle fill="url(#svg_211)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_28"/>
+  <ellipse fill="url(#svg_214)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_220" transform="rotate(-47.7626, 250.18, 170.125)"/>
+ </g>
+</svg> 
+</div>
+<div><h1><a id ="txtmanu">MANUAL</a></h1></div>
+<label class="switch2">
+<input type="checkbox" id="botonmanual" onclick='OnOff2()'>
+<span class="slider round2"></span>
+</label> 
+  <h3><a id ="porcentaje">50</a></h3>
+ 
+<div>
+  <input type="range" id="myRange" min="0" max="100"  onmouseup="enviarporcentaje()"disabled>
+</div>
+
+</center></td></div>
+</tr></table>
+<br>
+<div id="topicos">TOPICOS DE MANUFACTURA</div><br>
+<div id="integrantes">INTEGRANTES</div><br>
+<div id="alum1">Padilla Casanova Marco Alejandro</div><a id="mat1">E14020065</a> 
+<div id="alum2">Bringas Quezada Xanath Yesenia</div>  <a id="mat2">E14020023</a>
+<div id="alum3">Pulido Rejon Felipe de Jesus</div>    <a id="mat3">E14020069</a>
+<div id="alum4">Martinez Valderrama Javier</div>      <a id="mat4">E14020093</a>
+<div id="alum5">Michelle Marquez Landeros</div>       <a id="mat5">E14020053</a>
+        
+
+</center>   
+</body>
+</html>
+
+
+
+<script>      
+
+      usuario = 'proyectos';
+      contrasena = '123456789';
+
+    var g = new JustGage({
+    id: "gauge",
+    min: 0,
+    max: 100,
+    title: "NIVEL" 
+
+  });
+check="OFF";
+estadoautomatico = "OFF";
+estadomanual = "OFF";
+nivel=0;
+strEstado=" ";
+strEstadoUltimo=" ";
+
+$("#myRange").hide();
+$("#porcentaje").hide();
+$("#gauge").hide();
+$("#imgEstado").hide();
+$("#estado").hide();
+$("#txtmanu").hide();
+$("#txtauto").hide();
+$(".switch1").hide();
+$(".switch2").hide();
+$("#ledmanu").hide();
+$("#ledauto").hide();
+botonmanual.disabled=true;
+botonauto.disabled=true;
+
+
+
+      function OnOff1(){
+        if (estadoautomatico == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/automatico'
+          client.send(message);
+          botonmanual.disabled=true;
+        }
+        else if (estadoautomatico == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/automatico'
+          client.send(message);
+          botonmanual.disabled=false;
+         }
+      };
+    function OnOff2(){
+        if (estadomanual == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/manual'
+          client.send(message);
+          botonauto.disabled=true;
+          myRange.disabled=false;
+         $("#myRange").show();
+		 $("#porcentaje").show();
+        }
+        else if (estadomanual == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/manual'
+          client.send(message);
+          botonauto.disabled=false;
+          myRange.disabled=true;
+		  $("#myRange").hide();
+		  $("#porcentaje").hide();
+          }
+      };
+       function OnOff3(){
+        if (check == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/check'
+          client.send(message);
+          	document.getElementById("txtcheck").textContent = "DESACTIVAR";
+	        botonmanual.disabled=false;
+			botonauto.disabled=false;
+			$("#gauge").show();
+			$("#imgEstado").show();
+			$("#estado").show();
+			$("#txtmanu").show();
+			$("#txtauto").show();
+			$(".switch1").show();
+			$(".switch2").show();
+			$("#ledmanu").show();
+			$("#ledauto").show();
+			
+			$("#integrantes").hide();
+			$("#alum1").hide();
+			$("#alum2").hide();
+			$("#alum3").hide();
+			$("#alum4").hide();
+			$("#alum5").hide();
+			$("#mat1").hide();
+			$("#mat2").hide();
+			$("#mat3").hide();
+			$("#mat4").hide();
+			$("#mat5").hide();
+        }
+        else if (check == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/check'
+          client.send(message);
+          	document.getElementById("txtcheck").textContent = "ACTIVAR";
+          	botonmanual.disabled=true;
+			botonauto.disabled=true;
+			$("#gauge").hide();
+			$("#imgEstado").hide();
+			$("#estado").hide();
+			$("#txtmanu").hide();
+			$("#txtauto").hide();
+			$(".switch1").hide();
+			$(".switch2").hide();
+			$("#ledmanu").hide();
+			$("#ledauto").hide();
+			
+			$("#integrantes").show();
+			$("#alum1").show();
+			$("#alum2").show();
+			$("#alum3").show();
+			$("#alum4").show();
+			$("#alum5").show();
+			$("#mat1").show();
+			$("#mat2").show();
+			$("#mat3").show();
+			$("#mat4").show();
+			$("#mat5").show();
+        }
+         
+
+         };
+
+        function enviarporcentaje(){
+        var dato = document.getElementById("myRange").value;
+        message = new Paho.MQTT.Message(dato);
+        message.destinationName = '/' + usuario + '/porcentaje'
+        client.send(message);
+      };
+       
+      // called when the client connects
+      function onConnect() {
+        // Once a connection has been made, make a subscription and send a message.
+        console.log("onConnect");
+        client.subscribe("#");
+      }
+        
+      // called when the client loses its connection
+      function onConnectionLost(responseObject) {
+        if (responseObject.errorCode !== 0) {
+          console.log("onConnectionLost:", responseObject.errorMessage);
+          setTimeout(function() { client.connect() }, 5000);
+        }
+      }
+        
+      // called when a message arrives
+      function onMessageArrived(message) {
+
+        if (message.destinationName == '/' + usuario + '/' + 'nivel') { //acá coloco el topic
+            //document.getElementById("nivel").textContent = message.payloadString  + " %";
+       g.refresh(message.payloadString);
+       nivel= parseInt(message.payloadString);
+
+				  if (nivel <= 10) {
+				    strEstado = "VACIO";
+				  }
+				  if(nivel >10 && nivel<100) {
+				    strEstado = "NORMAL";
+				  }
+				  if(nivel >=100) {
+				    strEstado = "LLENO";
+				  }
+
+			 if (strEstado != strEstadoUltimo) { //envia el estado del estado solamente cuando cambia.
+    			strEstadoUltimo = strEstado;
+    			document.getElementById("estado").textContent = strEstado;
+             if (strEstado == "VACIO"){
+              document.getElementById("imgEstado").src = "pictures/tanke.png"
+            }
+            if (strEstado == "NORMAL"){
+              document.getElementById("imgEstado").src = "pictures/tank.png"
+            }
+            if (strEstado == "LLENO"){
+              document.getElementById("imgEstado").src = "pictures/tankf.png"
+            }   				
+  												}
+        																}
+
+        if (message.destinationName == '/' + usuario + '/' + 'automatico') { //acá coloco el topic
+           // document.getElementById("salidaDigital").textContent = message.payloadString;
+             estadoautomatico = message.payloadString;
+        
+        if (estadoautomatico == "ON") {
+              document.getElementById("led1").setAttribute("stop-color", "#0000ff");
+             
+            }
+            else if (estadoautomatico == "OFF") {
+              document.getElementById("led1").setAttribute("stop-color", "#000000");
+              
+            }
+            
+        }
+      if (message.destinationName == '/' + usuario + '/' + 'check') { //acá coloco el topic
+           // document.getElementById("salidaDigital").textContent = message.payloadString;
+             check = message.payloadString;}
+
+      if (message.destinationName == '/' + usuario + '/' + 'manual') { //acá coloco el topic
+           // document.getElementById("salidaDigital").textContent = message.payloadString;
+             estadomanual = message.payloadString;}
+            
+
+        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { //acá coloco el topic
+            document.getElementById("porcentaje").textContent = message.payloadString;
+            document.getElementById("led2").setAttribute("stop-color", "rgb(0, " + message.payloadString + ", 0)")
+
+        }
+      }
+
+        function onFailure(invocationContext, errorCode, errorMessage) {
+          var errDiv = document.getElementById("error");
+          errDiv.textContent = "Could not connect to WebSocket server, most likely you're behind a firewall that doesn't allow outgoing connections to port 36163";
+          errDiv.style.display = "block";
+        }
+        
+        var clientId = "ws" + Math.random();
+        // Create a client instance
+        var client = new Paho.MQTT.Client("m15.cloudmqtt.com", 36163, clientId);
+        
+        // set callback handlers
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+        
+        // connect the client
+        client.connect({
+          useSSL: true,
+          userName: usuario,
+          password: contrasena,
+          onSuccess: onConnect,
+          onFailure: onFailure
+        }); 
+       
+
+
+    </script>
