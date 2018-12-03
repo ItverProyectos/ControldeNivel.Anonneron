@@ -1,7 +1,7 @@
 <style type="text/css">
 /*-------------------------------------------Estilos----------------------------------------------*/
  html { 
-  background: url(pictures/35.jpg) no-repeat fixed center ; 
+  background: url(35.jpg) no-repeat fixed center ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -340,11 +340,11 @@ font-family: Stencil;
   <script src="https://code.highcharts.com/stock/highstock.js"></script>
   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-  <link rel="icon" type="image/png" href="pictures/itver.png" /> 
+  <link rel="icon" type="image/png" href="itver.png" /> 
 </head>
 
 <body>
-    <center><a href="Index Es.html"><img src="pictures/titu.png" alt=""></a>
+    <center><a href="Index Es.html"><img src="titu.png" alt=""></a>
     <div id ="txtcheck">ACTIVAR</div> 
     <label class="switch3">
 	<input type="checkbox" id="botontest" onclick='OnOff3()'>
@@ -387,7 +387,7 @@ font-family: Stencil;
   <td><center>
 
       <div id="gauge" class="a200x160px"></div>
-      <div><img id="imgEstado" src="pictures/tanke.png"></div>
+      <div><img id="imgEstado" src="tanke.png"></div>
       <div><h2><a id ="estado">VACIO</a></h2></div> 
 
     
@@ -603,7 +603,7 @@ botonauto.disabled=true;
       // called when a message arrives
       function onMessageArrived(message) {
 
-        if (message.destinationName == '/' + usuario + '/' + 'nivel') { //ac· coloco el topic
+        if (message.destinationName == '/' + usuario + '/' + 'nivel') { //ac√° coloco el topic
             //document.getElementById("nivel").textContent = message.payloadString  + " %";
        g.refresh(message.payloadString);
        nivel= parseInt(message.payloadString);
@@ -622,18 +622,18 @@ botonauto.disabled=true;
     			strEstadoUltimo = strEstado;
     			document.getElementById("estado").textContent = strEstado;
              if (strEstado == "VACIO"){
-              document.getElementById("imgEstado").src = "pictures/tanke.png"
+              document.getElementById("imgEstado").src = "tanke.png"
             }
             if (strEstado == "NORMAL"){
-              document.getElementById("imgEstado").src = "pictures/tank.png"
+              document.getElementById("imgEstado").src = "tank.png"
             }
             if (strEstado == "LLENO"){
-              document.getElementById("imgEstado").src = "pictures/tankf.png"
+              document.getElementById("imgEstado").src = "tankf.png"
             }   				
   												}
         																}
 
-        if (message.destinationName == '/' + usuario + '/' + 'automatico') { //ac· coloco el topic
+        if (message.destinationName == '/' + usuario + '/' + 'automatico') { //ac√° coloco el topic
            // document.getElementById("salidaDigital").textContent = message.payloadString;
              estadoautomatico = message.payloadString;
         
@@ -647,16 +647,16 @@ botonauto.disabled=true;
             }
             
         }
-      if (message.destinationName == '/' + usuario + '/' + 'check') { //ac· coloco el topic
+      if (message.destinationName == '/' + usuario + '/' + 'check') { //ac√° coloco el topic
            // document.getElementById("salidaDigital").textContent = message.payloadString;
              check = message.payloadString;}
 
-      if (message.destinationName == '/' + usuario + '/' + 'manual') { //ac· coloco el topic
+      if (message.destinationName == '/' + usuario + '/' + 'manual') { //ac√° coloco el topic
            // document.getElementById("salidaDigital").textContent = message.payloadString;
              estadomanual = message.payloadString;}
             
 
-        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { //ac· coloco el topic
+        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { //ac√° coloco el topic
             document.getElementById("porcentaje").textContent = message.payloadString;
             document.getElementById("led2").setAttribute("stop-color", "rgb(0, " + message.payloadString + ", 0)")
 
