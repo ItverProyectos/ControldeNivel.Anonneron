@@ -450,8 +450,7 @@ $("#porcentaje").hide();
         
       // called when a message arrives
       function onMessageArrived(message) {
-        if (message.destinationName == '/' + usuario + '/' + 'nivel') { //acá coloco el topic
-            //document.getElementById("nivel").textContent = message.payloadString  + " %";
+        if (message.destinationName == '/' + usuario + '/' + 'nivel') { 
        g.refresh(message.payloadString);
        nivel= parseInt(message.payloadString);
 				  if (nivel <= 10) {
@@ -477,9 +476,8 @@ $("#porcentaje").hide();
             }   				
   												}
         																}
-        if (message.destinationName == '/' + usuario + '/' + 'automatico') { //acá coloco el topic
-           // document.getElementById("salidaDigital").textContent = message.payloadString;
-             estadoautomatico = message.payloadString;
+        if (message.destinationName == '/' + usuario + '/' + 'automatico') { 
+           estadoautomatico = message.payloadString;
         
         if (estadoautomatico == "ON") {
               document.getElementById("botonauto").checked=true;
@@ -495,9 +493,8 @@ $("#porcentaje").hide();
             }
             
         }
-      if (message.destinationName == '/' + usuario + '/' + 'check') { //acá coloco el topic
-           // document.getElementById("salidaDigital").textContent = message.payloadString;
-             check = message.payloadString;
+      if (message.destinationName == '/' + usuario + '/' + 'check') { 
+           check = message.payloadString;
            if (check == "ON") {
               document.getElementById("botontest").checked=true;
               document.getElementById("txtcheck").textContent = "DESACTIVAR";
@@ -508,6 +505,7 @@ $("#porcentaje").hide();
               myRange.disabled=true;
               $("#gauge").show();
               $("#imgEstado").show();
+	      $("#estado").hide();
               $("#txtmanu").show();
               $("#txtauto").show();
               $(".switch1").show();
@@ -541,6 +539,7 @@ $("#porcentaje").hide();
               myRange.disabled=true;
               $("#gauge").hide();
               $("#imgEstado").hide();
+      	      $("#estado").hide();
               $("#txtmanu").hide();
               $("#txtauto").hide();
               $(".switch1").hide();
@@ -556,9 +555,8 @@ $("#porcentaje").hide();
               $("#porcentaje").hide();    
             }
           }
-      if (message.destinationName == '/' + usuario + '/' + 'manual') { //acá coloco el topic
-           // document.getElementById("salidaDigital").textContent = message.payloadString;
-             estadomanual = message.payloadString;
+      if (message.destinationName == '/' + usuario + '/' + 'manual') {
+            estadomanual = message.payloadString;
 
              if (estadomanual == "ON") {
               document.getElementById("botonmanual").checked=true;
@@ -582,7 +580,7 @@ $("#porcentaje").hide();
 
            }
             
-        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { //acá coloco el topic
+        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { 
             document.getElementById("porcentaje").textContent = message.payloadString;
             document.getElementById("myRange").value=message.payloadString;
             document.getElementById("led2").setAttribute("stop-color", "rgb(0, " + message.payloadString + ", 0)")
