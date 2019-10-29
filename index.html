@@ -238,15 +238,12 @@ font-size:130%;
 color:black;
 font-family: Digital-7 Mono;
 }
-
-
 </style>
 
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="UTF-8">
   <title>Llenado Automatico Control Wifi</title>
   <script src='mqttws31.js' type='text/javascript'></script>
@@ -260,111 +257,108 @@ font-family: Digital-7 Mono;
 </head>
 
 <body>
-    <center><a><img src="titu.png" alt=""></a>
-    <div id ="txtcheck">ACTIVAR</div> 
-    <label class="switch3">
+  <center><a><img src="titu.png" alt=""></a>
+  <div id ="txtcheck">ACTIVAR</div> 
+  <label class="switch3">
 	<input type="checkbox" id="botontest" onclick='OnOff3()'>
 	<span class="slider round3"></span>
   </label></center>
-<center><table>
-<tr>
+  <center><table>
+  <tr>
   <td><center>
-<div id ="ledauto">
-<svg width="200" height="150"viewBox="0 0 640 480">
- <defs>
+  <div id ="ledauto">
+  <svg width="200" height="150"viewBox="0 0 640 480">
+  <defs>
   <linearGradient id="svg_6" x1="0" y1="0" x2="1" y2="0">
-   <stop stop-color="#bfbfbf" offset="0"/>
-   <stop stop-color="#404040" offset="1"/>
+  <stop stop-color="#bfbfbf" offset="0"/>
+  <stop stop-color="#404040" offset="1"/>
   </linearGradient>
   <linearGradient id="svg_11" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
-   <stop id="led1" stop-color="#000000" stop-opacity="0.992188" offset="0"/>
-   <stop stop-color="#010182" stop-opacity="0.988281" offset="1"/>
+  <stop id="led1" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
+  <stop stop-color="#010182" stop-opacity="0.988281" offset="1"/>
   </linearGradient>
   <linearGradient id="svg_14" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
-   <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
-   <stop stop-color="#0606d3" stop-opacity="0.984375" offset="0.703125"/>
+  <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+  <stop stop-color="#0606d3" stop-opacity="0.984375" offset="0.703125"/>
   </linearGradient>
- </defs>
- <g>
+  </defs>
+  <g>
   <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_3" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
   <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_7"/>
   <circle fill="url(#svg_11)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_8"/>
   <ellipse fill="url(#svg_14)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_20" transform="rotate(-47.7626, 250.18, 170.125)"/>
- </g>
-</svg>
-</div>
-<div><h1><a id ="txtauto">AUTOMATICO</a></h1></div> 
-<label class="switch1">
-<input type="checkbox" id="botonauto"onclick='OnOff1()'>
-<span class="slider round"></span>
-</label> 
+  </g>
+  </svg>
+  </div>
+  <div><h1><a id ="txtauto">AUTOMATICO</a></h1></div> 
+  <label class="switch1">
+  <input type="checkbox" id="botonauto"onclick='OnOff1()'>
+  <span class="slider round"></span>
+  </label> 
   </center></td>
-
   <td><center>
-
       <div id="gauge" class="a200x160px"></div>
       <div><img id="imgEstado" src="tanke.png"></div>
       <div><h2><a id ="estado">VACIO</a></h2></div> 
-
-    
   </center></td>
   <td><center>
-<div id="ledmanu">
-<svg width="200" height="150"viewBox="0 0 640 480">
- <defs>
+  <div id="ledmanu">
+  <svg width="200" height="150"viewBox="0 0 640 480">
+  <defs>
   <linearGradient id="svg_26" x1="0" y1="0" x2="1" y2="0">
-   <stop stop-color="#bfbfbf" offset="0"/>
-   <stop stop-color="#404040" offset="1"/>
+  <stop stop-color="#bfbfbf" offset="0"/>
+  <stop stop-color="#404040" offset="1"/>
   </linearGradient>
   <linearGradient id="svg_211" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
-   <stop id="led2" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
-   <stop stop-color="#018201" stop-opacity="0.988281" offset="1"/>
+  <stop id="led2" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
+  <stop stop-color="#018201" stop-opacity="0.988281" offset="1"/>
   </linearGradient>
   <linearGradient id="svg_214" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
-   <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
-   <stop stop-color="#06d306" stop-opacity="0.984375" offset="0.703125"/>
+  <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+  <stop stop-color="#06d306" stop-opacity="0.984375" offset="0.703125"/>
   </linearGradient>
- </defs>
- <g>
+  </defs>
+  <g>
   <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_23" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
   <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_27"/>
   <circle fill="url(#svg_211)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_28"/>
   <ellipse fill="url(#svg_214)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_220" transform="rotate(-47.7626, 250.18, 170.125)"/>
- </g>
-</svg> 
-</div>
-<div><h1><a id ="txtmanu">MANUAL</a></h1></div>
-<label class="switch2">
-<input type="checkbox" id="botonmanual" onclick='OnOff2()'>
-<span class="slider round2"></span>
-</label> 
+  </g>
+  </svg> 
+  </div>
+  <div><h1><a id ="txtmanu">MANUAL</a></h1></div>
+  <label class="switch2">
+  <input type="checkbox" id="botonmanual" onclick='OnOff2()'>
+  <span class="slider round2"></span>
+  </label> 
   <h3><a id ="porcentaje">50</a></h3>
- 
-<div>
+  <div>
   <input type="range" id="myRange" min="0" max="100"  onmouseup="enviarporcentaje()"disabled>
-</div>
-<a  id= "br2"><br><br><br></a>
-<a id="logoitv"><img src="itver.png" alt=""></a>
-</center></td></div>
-</tr></table>
-<a  id= "br1"><br><br><br><br><br><br><br><br><br></a>
-<div id="dimi">DEPARTAMENTO DE INVESTIGACION MECATRONICO INDUSTRIAL</div><br>
-<div id="canal">www.youtube.com/anonneron</div>
-</center>   
-</body>
+  </div>
+  <a  id= "br2"><br><br><br></a>
+  <a id="logoitv"><img src="itver.png" alt=""></a>
+  </center></td></div>
+  </tr></table>
+  <a  id= "br1"><br><br><br><br><br><br><br><br><br></a>
+  <div id="dimi">DEPARTAMENTO DE INVESTIGACION MECATRONICO INDUSTRIAL</div><br>
+  <div id="canal">www.youtube.com/anonneron</div>
+  </center>   
+  </body>
 </html>
 
 
 
-<script>      
-      usuario = 'proyectos';
-      contrasena = '123456789';
-    var g = new JustGage({
-    id: "gauge",
-    min: 0,
-    max: 100,
-    title: "NIVEL" 
-  });
+<script>   
+
+usuario = 'proyectos';
+contrasena = '123456789';
+
+var g = new JustGage({
+id: "gauge",
+min: 0,
+max: 100,
+title: "NIVEL"});
+
 check="OFF";
 estadoautomatico = "OFF";
 estadomanual = "OFF";
@@ -389,19 +383,19 @@ $("#myRange").hide();
 $("#porcentaje").hide();
 
 
-      function OnOff1(){
-        if (estadoautomatico == "OFF"){
+  function OnOff1(){
+    if (estadoautomatico == "OFF"){
           message = new Paho.MQTT.Message("ON");
           message.destinationName = '/' + usuario + '/automatico'
           client.send(message);
         }
-        else if (estadoautomatico == "ON"){
+    else if (estadoautomatico == "ON"){
           message = new Paho.MQTT.Message("OFF");
           message.destinationName = '/' + usuario + '/automatico'
           client.send(message);
         }
       };
-    function OnOff2(){
+  function OnOff2(){
         if (estadomanual == "OFF"){
           message = new Paho.MQTT.Message("ON");
           message.destinationName = '/' + usuario + '/manual'
@@ -413,7 +407,7 @@ $("#porcentaje").hide();
           client.send(message);
           }
       };
-       function OnOff3(){
+    function OnOff3(){
         if (check == "OFF"){
           message = new Paho.MQTT.Message("ON");
           message.destinationName = '/' + usuario + '/check'
@@ -426,7 +420,7 @@ $("#porcentaje").hide();
       }
          
          };
-        function enviarporcentaje(){
+    function enviarporcentaje(){
         var dato = document.getElementById("myRange").value;
         message = new Paho.MQTT.Message(dato);
         message.destinationName = '/' + usuario + '/porcentaje'
@@ -434,21 +428,21 @@ $("#porcentaje").hide();
       };
        
       // called when the client connects
-      function onConnect() {
+    function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("onConnect");
         client.subscribe("#");
       }
         
       // called when the client loses its connection
-      function onConnectionLost(responseObject) {
+    function onConnectionLost(responseObject) {
         if (responseObject.errorCode !== 0) {
           console.log("onConnectionLost:", responseObject.errorMessage);
           setTimeout(function() { client.connect() }, 5000);
         }
       }
         
-      // called when a message arrives
+// called when a message arrives
       function onMessageArrived(message) {
         if (message.destinationName == '/' + usuario + '/' + 'nivel') { 
        g.refresh(message.payloadString);
@@ -462,7 +456,7 @@ $("#porcentaje").hide();
 				  if(nivel >=100) {
 				    strEstado = "LLENO";
 				  }
-			 if (strEstado != strEstadoUltimo) { //envia el estado del estado solamente cuando cambia.
+			 if (strEstado != strEstadoUltimo) { //envia el estado solamente cuando cambia.
     			strEstadoUltimo = strEstado;
     			document.getElementById("estado").textContent = strEstado;
              if (strEstado == "VACIO"){
@@ -481,13 +475,13 @@ $("#porcentaje").hide();
         
         if (estadoautomatico == "ON") {
               document.getElementById("botonauto").checked=true;
-              document.getElementById("led1").setAttribute("stop-color", "#0000ff");
+              document.getElementById("led1").setAttribute("stop-color", "rgb(0,0,255)");
               botonmanual.disabled=true;
              
             }
             else if (estadoautomatico == "OFF") {
               document.getElementById("botonauto").checked=false;
-              document.getElementById("led1").setAttribute("stop-color", "#000000");
+              document.getElementById("led1").setAttribute("stop-color", "rgb(0,0,0)");
               botonmanual.disabled=false;
               
             }
@@ -504,8 +498,8 @@ $("#porcentaje").hide();
               botonauto.disabled=false;
               myRange.disabled=true;
               $("#gauge").show();
+              $("#estado").hide();
               $("#imgEstado").show();
-	      $("#estado").hide();
               $("#txtmanu").show();
               $("#txtauto").show();
               $(".switch1").show();
@@ -522,7 +516,7 @@ $("#porcentaje").hide();
             
             }
             else if (check == "OFF") {
-              document.getElementById("led1").setAttribute("stop-color", "#000000");
+              document.getElementById("led1").setAttribute("stop-color", "rgb(0,0,0)");
               document.getElementById("led2").setAttribute("stop-color", "rgb(0,0,0)")
               document.getElementById("botontest").checked=false;
               document.getElementById("botonauto").checked=false;
@@ -538,8 +532,8 @@ $("#porcentaje").hide();
               botonauto.disabled=true;
               myRange.disabled=true;
               $("#gauge").hide();
+              $("#estado").hide();
               $("#imgEstado").hide();
-      	      $("#estado").hide();
               $("#txtmanu").hide();
               $("#txtauto").hide();
               $(".switch1").hide();
@@ -555,7 +549,7 @@ $("#porcentaje").hide();
               $("#porcentaje").hide();    
             }
           }
-      if (message.destinationName == '/' + usuario + '/' + 'manual') {
+      if (message.destinationName == '/' + usuario + '/' + 'manual') { 
             estadomanual = message.payloadString;
 
              if (estadomanual == "ON") {
