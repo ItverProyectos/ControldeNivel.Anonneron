@@ -60,15 +60,15 @@ body {
   background-size: cover;
   /**********color de letra**************************************************/
   color: #34495e;
-  padding-top: 40px;
+  padding-top: 0px;
   text-shadow: white 1px 1px 1px;
 }
 .value {
-  border-bottom: 4px dashed blue;
+  border-bottom: 8px dashed blue;
   text-align: center;
   font-weight: bold;
   font-size: 10em;
-  width: 300px; 
+  width: 170px; 
   height: 100px;
   line-height: 60px;
   margin: 40px auto;
@@ -79,8 +79,8 @@ input[type="range"] {
   display: block;
   -webkit-appearance: none;
   background-color: blue;
-  width: 300px;
-  height: 5px;
+  width: 870px;
+  height: 10px;
   border-radius: 5px;
   margin: 0 auto;
   outline: 0;
@@ -88,8 +88,8 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: white;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid blue;
   cursor: pointer;
@@ -100,7 +100,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: 2px solid #e74c3c;
   }
   input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.6);
+    transform: scale(1.3);
   }
 
 
