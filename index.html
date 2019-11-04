@@ -1,0 +1,400 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+  <meta charset="UTF-8">
+  <title>Servoválvula WiFi</title>
+  <link rel="stylesheet" type="text/css" href="range.css">
+  <script src='mqttws31.js' type='text/javascript'></script>
+  <script src="raphael-2.1.4.min.js"></script>
+  <script src="justgage.js"></script> 
+  <script src="jquery.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  <link rel="icon" type="image/png" href="itver.png" /> 
+ </head> 
+
+<body> 
+<center>
+<a><img src="titu.png" alt=""></a>
+<div id ="txtcheck">ACTIVAR</div> 
+  <label class="switch3">
+  <input type="checkbox" id="botontest" onclick='OnOff3()'>
+  <span class="slider round3"></span>
+  </label>
+<table border="0">
+      <tr>
+        <td><center>
+          <div id ="ledauto">
+  <svg width="400" height="300"viewBox="0 0 640 480">
+  <defs>
+  <linearGradient id="svg_6" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#bfbfbf" offset="0"/>
+  <stop stop-color="#404040" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_11" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+  <stop  id="led1.2" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
+  <stop id="led1" stop-color="#9b9b9b" stop-opacity="0.988281" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_14" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+  <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+  <stop id="led1.1" stop-color="#9b9b9b" stop-opacity="0.984375" offset="0.703125"/>
+  </linearGradient>
+  </defs>
+  <g>
+  <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_3" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
+  <circle fill="url(#svg_6)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_7"/>
+  <circle fill="url(#svg_11)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_8"/>
+  <ellipse fill="url(#svg_14)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_20" transform="rotate(-47.7626, 250.18, 170.125)"/>
+  </g>
+  </svg>
+  </div>
+  <div><h1><a id ="txtauto">ELECTROVALVULA</a></h1></div> 
+  <label class="switch1">
+  <input type="checkbox" id="botonauto"onclick='OnOff1()'>
+  <span class="slider round"></span>
+  </label> 
+        </center></td>
+        <td><center>
+          <div id="gauge" class="a200x160px"></div>
+          <div><img id="imgEstado" src="valv.png"></div>
+          <div><a id ="estado">Moviendo</a></div>
+          <a  id= "br2"><br><br></a>
+          <a id="logoitv"><img src="itver.png" alt=""></a></center></td>
+        <td><center>
+          <div id="ledmanu">
+  <svg width="400" height="300"viewBox="0 0 640 480">
+  <defs>
+  <linearGradient id="svg_26" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#bfbfbf" offset="0"/>
+  <stop stop-color="#404040" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_211" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+  <stop id="led2" stop-color="rgb(0,0,0)" stop-opacity="0.992188" offset="0"/>
+  <stop id="led2.1"stop-color="#9b9b9b" stop-opacity="0.988281" offset="1"/>
+  </linearGradient>
+  <linearGradient id="svg_214" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+  <stop stop-color="#ffffff" stop-opacity="0.996094" offset="0"/>
+  <stop id="led2.2" stop-color="#9b9b9b" stop-opacity="0.984375" offset="0.703125"/>
+  </linearGradient>
+  </defs>
+  <g>
+  <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" cx="320" cy="240" r="196.125" id="svg_23" fill-opacity="0.77" transform="rotate(90, 320, 240)"/>
+  <circle fill="url(#svg_26)" stroke-width="17.5" stroke-linecap="round" fill-opacity="0.64" cx="319.252837" cy="239.999045" r="160" id="svg_27"/>
+  <circle fill="url(#svg_211)" stroke-width="17.5" stroke-linecap="round" cx="320.000535" cy="240.001698" r="150" id="svg_28"/>
+  <ellipse fill="url(#svg_214)" stroke-width="17.5" stroke-linecap="round" cx="250.179609" cy="170.124194" rx="75.675959" ry="44.402987" id="svg_220" transform="rotate(-47.7626, 250.18, 170.125)"/>
+  </g>
+  </svg> 
+  </div>
+  <div><h1><a id ="txtmanu">SERVOVALVULA</a></h1></div>
+  <label class="switch2">
+  <input type="checkbox" id="botonmanual" onclick='OnOff2()'>
+  <span class="slider round2"></span>
+  </label> 
+        </center></td>
+      </tr>
+      <tr>
+      <td colspan="3"><center>
+       
+      <div class="value" id ="porcentaje">0</div>
+      <input type="range" id="myRange" min="0" max="30" step="1" value="0">
+      <a  id= "br3"><br><br><br></a>
+      </center></td>
+      </tr>
+    </table>
+    <a  id= "br1"><br><br></a>
+    <div id="dimi">DEPARTAMENTO DE INVESTIGACION MECATRONICO INDUSTRIAL</div><br>
+  <div id="canal">www.youtube.com/anonneron</div>
+  </center>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+usuario = 'proyectos';
+contrasena = '123456789';
+
+var g = new JustGage({
+id: "gauge",
+min: 0,
+max: 90,
+title: "GRADOS"});
+
+check="OFF";
+estadoautomatico = "OFF";
+estadomanual = "OFF";
+nivel=0;
+dato=0;
+strEstado=" ";
+strEstadoUltimo=" ";
+$("#gauge").hide();
+$("#imgEstado").hide();
+$("#estado").hide();
+$("#txtmanu").hide();
+$("#txtauto").hide();
+$(".switch1").hide();
+$(".switch2").hide();
+$("#ledmanu").hide();
+$("#ledauto").hide();
+$("#br1").show();
+$("#br2").show();
+$("#br3").show();
+$("#logoitv").show();
+$("#dimi").show();
+$("#canal").show();
+$("#myRange").hide();
+$("#porcentaje").hide();
+
+  function OnOff1(){
+    if (estadoautomatico == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/automatico'
+          client.send(message);
+        }
+    else if (estadoautomatico == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/automatico'
+          client.send(message);
+        }
+      };
+    function OnOff2(){
+        if (estadomanual == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/manual'
+          client.send(message);
+          }
+        else if (estadomanual == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/manual'
+          client.send(message);
+          }
+      };
+    function OnOff3(){
+        if (check == "OFF"){
+          message = new Paho.MQTT.Message("ON");
+          message.destinationName = '/' + usuario + '/check'
+          client.send(message);
+      }
+        else if (check == "ON"){
+          message = new Paho.MQTT.Message("OFF");
+          message.destinationName = '/' + usuario + '/check'
+          client.send(message);
+      }
+         
+         };  
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function(){
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue*3;
+  if (newValue != dato) { //envia el estado solamente cuando cambia.
+  dato = newValue;
+  message = new Paho.MQTT.Message(newValue);
+  message.destinationName = '/' + usuario + '/porcentaje'
+  client.send(message);}
+}
+  elem.addEventListener("input", rangeValue);
+
+
+
+
+    function onConnect() {
+        // Once a connection has been made, make a subscription and send a message.
+        console.log("onConnect");
+        client.subscribe("#");
+      }
+        
+      // called when the client loses its connection
+    function onConnectionLost(responseObject) {
+        if (responseObject.errorCode !== 0) {
+          console.log("onConnectionLost:", responseObject.errorMessage);
+          setTimeout(function() { client.connect() }, 5000);
+        }
+      }
+      // called when a message arrives
+      function onMessageArrived(message) {
+        if (message.destinationName == '/' + usuario + '/' + 'nivel') { 
+       g.refresh(message.payloadString);
+       nivel= parseInt(message.payloadString);
+          if (nivel <= 0) {
+            strEstado = "Abierto";
+          }
+          if(nivel >0 && nivel<90) {
+            strEstado = "Moviendo";
+          }
+          if(nivel >=90) {
+            strEstado = "Cerrado";
+          }
+       if (strEstado != strEstadoUltimo) { //envia el estado solamente cuando cambia.
+          strEstadoUltimo = strEstado;
+          document.getElementById("estado").textContent = strEstado;
+             if (strEstado == "Cerrado"){
+              document.getElementById("imgEstado").src = "valvec.png"
+              document.getElementById("led1").setAttribute("stop-color", "rgb(255,0,0)");
+              document.getElementById("led1.1").setAttribute("stop-color", "rgb(255,0,0)");
+              document.getElementById("led1.2").setAttribute("stop-color", "rgb(100,0,0)");
+              document.getElementById("botonauto").checked=true;
+              document.getElementById("txtauto").style.color="red";
+              document.getElementById("estado").style.color="red";
+              estadoautomatico = "ON";
+            }
+            if (strEstado == "Moviendo"){
+              document.getElementById("imgEstado").src = "valv.png"
+              document.getElementById("led1").setAttribute("stop-color", "rgb(0,255,0)");
+              document.getElementById("led1.1").setAttribute("stop-color", "rgb(0,255,0)");
+              document.getElementById("led1.2").setAttribute("stop-color", "rgb(0,100,0)");
+              document.getElementById("estado").style.color="black";
+            }
+            if (strEstado == "Abierto"){
+              document.getElementById("imgEstado").src = "valveo.png"
+              document.getElementById("led1").setAttribute("stop-color", "rgb(0,255,0)");
+              document.getElementById("led1.1").setAttribute("stop-color", "rgb(0,255,0)");
+              document.getElementById("led1.2").setAttribute("stop-color", "rgb(0,100,0)");
+              document.getElementById("botonauto").checked=false;
+              document.getElementById("txtauto").style.color="green";
+              document.getElementById("estado").style.color="green";
+              estadoautomatico = "OFF";
+
+            }           
+                          }
+                                        }
+        if (message.destinationName == '/' + usuario + '/' + 'automatico') { 
+           estadoautomatico = message.payloadString;
+        
+        if (estadoautomatico == "ON") {
+              document.getElementById("botonauto").checked=true;
+            }
+            else if (estadoautomatico == "OFF") {
+              document.getElementById("botonauto").checked=false;
+            }
+            
+        }
+      if (message.destinationName == '/' + usuario + '/' + 'check') { 
+           check = message.payloadString;
+           if (check == "ON") {
+              document.getElementById("botontest").checked=true;
+              document.getElementById("txtcheck").textContent = "DESACTIVAR";
+              $("#gauge").show();
+              $("#estado").show();
+              $("#imgEstado").show();
+              $("#txtmanu").show();
+              $("#txtauto").show();
+              $(".switch1").show();
+              $(".switch2").show();
+              $("#ledmanu").show();
+              $("#ledauto").show();
+              $("#br1").hide();
+              $("#br2").hide();
+              $("#br3").hide();
+              $("#logoitv").hide();
+              $("#dimi").hide();
+              $("#canal").hide();
+              $("#myRange").hide();
+              $("#porcentaje").hide();
+            
+            }
+            else if (check == "OFF") {
+              myRange.disabled=true;
+              document.getElementById("myRange").value=0;
+              document.getElementById("porcentaje").textContent = 0;
+              document.getElementById("estado").textContent ="Moviendo";
+              document.getElementById("botontest").checked=false;
+              document.getElementById("botonauto").checked=false;
+              document.getElementById("botonmanual").checked=false;
+              document.getElementById("txtcheck").textContent = "ACTIVAR";
+              document.getElementById("imgEstado").src = "valv.png"
+              document.getElementById("estado").style.color="black";
+              document.getElementById("txtauto").style.color="green";
+              document.getElementById("led1").setAttribute("stop-color", "#9b9b9b");
+              document.getElementById("led1.1").setAttribute("stop-color", "#9b9b9b");
+              document.getElementById("led1.2").setAttribute("stop-color", "rgb(0,0,0)");
+              document.getElementById("led2").setAttribute("stop-color", "rgb(0,0,0)");
+              document.getElementById("led2.1").setAttribute("stop-color", "#9b9b9b");
+              document.getElementById("led2.2").setAttribute("stop-color", "#9b9b9b");
+
+              check="OFF";
+              estadoautomatico = "OFF";
+              estadomanual = "OFF";
+              nivel=0;
+              strEstado=" ";
+              strEstadoUltimo=" ";
+              myRange.disabled=true;
+              $("#gauge").hide();
+              $("#estado").hide();
+              $("#imgEstado").hide();
+              $("#txtmanu").hide();
+              $("#txtauto").hide();
+              $(".switch1").hide();
+              $(".switch2").hide();
+              $("#ledmanu").hide();
+              $("#ledauto").hide();
+              $("#br1").show();
+              $("#br2").show();
+              $("#br3").show();
+              $("#logoitv").show();
+              $("#dimi").show();
+              $("#canal").show();
+              $("#myRange").hide();
+              $("#porcentaje").hide();    
+            }
+          }
+      if (message.destinationName == '/' + usuario + '/' + 'manual') { 
+            estadomanual = message.payloadString;
+
+             if (estadomanual == "ON") {
+              document.getElementById("botonmanual").checked=true;
+              myRange.disabled=false;
+              $("#myRange").show();
+              $("#porcentaje").show();
+              document.getElementById("led2").setAttribute("stop-color", "rgb(0,0,100)");
+              document.getElementById("led2.1").setAttribute("stop-color", "rgb(0,0,255)");
+              document.getElementById("led2.2").setAttribute("stop-color", "rgb(0,0,255)");
+              }
+            else if (estadomanual == "OFF") {
+             document.getElementById("led2").setAttribute("stop-color", "rgb(0,0,0)");
+             document.getElementById("led2.1").setAttribute("stop-color", "#9b9b9b");
+             document.getElementById("led2.2").setAttribute("stop-color", "#9b9b9b");
+             document.getElementById("botonmanual").checked=false;
+             myRange.disabled=true;
+             $("#myRange").hide();
+             $("#porcentaje").hide(); 
+              
+            }
+
+
+           }
+            
+        if (message.destinationName == '/' + usuario + '/' + 'porcentaje') { 
+            document.getElementById("porcentaje").textContent = message.payloadString*3;
+            document.getElementById("myRange").value=message.payloadString;
+      }
+
+
+      }
+        function onFailure(invocationContext, errorCode, errorMessage) {
+          var errDiv = document.getElementById("error");
+          errDiv.textContent = "Could not connect to WebSocket server, most likely you're behind a firewall that doesn't allow outgoing connections to port 36163";
+          errDiv.style.display = "block";
+        }
+        
+        var clientId = "ws" + Math.random();
+        // Create a client instance
+        var client = new Paho.MQTT.Client("m15.cloudmqtt.com", 36163, clientId);
+        
+        // set callback handlers
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+        
+        // connect the client
+        client.connect({
+          useSSL: true,
+          userName: usuario,
+          password: contrasena,
+          onSuccess: onConnect,
+          onFailure: onFailure
+        });
+</script>
