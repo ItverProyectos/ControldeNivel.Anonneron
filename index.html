@@ -11,12 +11,12 @@
   <script src="https://code.highcharts.com/stock/highstock.js"></script>
   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-  <link rel="icon" type="pictures/image/png" href="pictures/itver.png" /> 
+  <link rel="icon" type="image/png" href="itver.png" /> 
  </head> 
 
 <body> 
 <center>
-<a><img src="pictures/titu.png" alt=""></a>
+<a><img src="titu.png" alt=""></a>
 <div id ="txtcheck">ACTIVAR</div> 
   <label class="switch3">
   <input type="checkbox" id="botontest" onclick='OnOff3()'>
@@ -57,10 +57,10 @@
         </center></td>
         <td><center>
           <div id="gauge" class="a200x160px"></div>
-          <div><img id="imgEstado" src="pictures/valv.png"></div>
+          <div><img id="imgEstado" src="valv.png"></div>
           <div><h2><a id ="estado">Moviendo</a></h2></div>
           <a  id= "br2"><br><br></a>
-          <a id="logoitv"><img src="pictures/itver.png" alt=""></a></center></td>
+          <a id="logoitv"><img src="itver.png" alt=""></a></center></td>
         <td><center>
           <div id="ledmanu">
   <svg width="200" height="150"viewBox="0 0 640 480">
@@ -232,7 +232,7 @@ var rangeValue = function(){
           strEstadoUltimo = strEstado;
           document.getElementById("estado").textContent = strEstado;
              if (strEstado == "Cerrado"){
-              document.getElementById("imgEstado").src = "pictures/valvec.png"
+              document.getElementById("imgEstado").src = "valvec.png"
               document.getElementById("led1").setAttribute("stop-color", "rgb(255,0,0)");
               document.getElementById("led1.1").setAttribute("stop-color", "rgb(255,0,0)");
               document.getElementById("led1.2").setAttribute("stop-color", "rgb(100,0,0)");
@@ -242,14 +242,14 @@ var rangeValue = function(){
               estadoautomatico = "ON";
             }
             if (strEstado == "Moviendo"){
-              document.getElementById("imgEstado").src = "pictures/valv.png"
+              document.getElementById("imgEstado").src = "valv.png"
               document.getElementById("led1").setAttribute("stop-color", "rgb(0,255,0)");
               document.getElementById("led1.1").setAttribute("stop-color", "rgb(0,255,0)");
               document.getElementById("led1.2").setAttribute("stop-color", "rgb(0,100,0)");
               document.getElementById("estado").style.color="black";
             }
             if (strEstado == "Abierto"){
-              document.getElementById("imgEstado").src = "pictures/valveo.png"
+              document.getElementById("imgEstado").src = "valveo.png"
               document.getElementById("led1").setAttribute("stop-color", "rgb(0,255,0)");
               document.getElementById("led1.1").setAttribute("stop-color", "rgb(0,255,0)");
               document.getElementById("led1.2").setAttribute("stop-color", "rgb(0,100,0)");
@@ -304,7 +304,7 @@ var rangeValue = function(){
               document.getElementById("botonauto").checked=false;
               document.getElementById("botonmanual").checked=false;
               document.getElementById("txtcheck").textContent = "ACTIVAR";
-              document.getElementById("imgEstado").src = "pictures/valv.png"
+              document.getElementById("imgEstado").src = "valv.png"
               document.getElementById("estado").style.color="black";
               document.getElementById("txtauto").style.color="green";
               document.getElementById("led1").setAttribute("stop-color", "#9b9b9b");
