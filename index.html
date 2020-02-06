@@ -97,7 +97,7 @@
       <td colspan="3"><center>
        
       <div class="value" id ="porcentaje">0</div>
-      <input type="range" id="myRange" min="0" max="30" step="1" value="0">
+      <input type="range" id="myRange" min="1" max="30" step="1" value="0">
       <a  id= "br3"><br><br><br></a>
       </center></td>
       </tr>
@@ -222,10 +222,10 @@ var rangeValue = function(){
         if (message.destinationName == '/' + usuario + '/' + 'nivel') { 
        g.refresh(message.payloadString);
        nivel= parseInt(message.payloadString);
-          if (nivel <= 0) {
+          if (nivel <= 3) {
             strEstado = "Abierto";
           }
-          if(nivel >0 && nivel<90) {
+          if(nivel >3 && nivel<90) {
             strEstado = "Moviendo";
           }
           if(nivel >=90) {
